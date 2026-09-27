@@ -1,0 +1,6 @@
+{
+  "name": "9G-onlyno999 - 九宫格修仙大招分镜工坊",
+  "description": "9G-onlyno999: 专业影视级 3×3 九宫格法术大招动作分镜生成器，支持青龙/紫焰/金剑等多元修仙功法流派、参考图角色特征提取、9镜头智能切片导出与影视动漫画质预览",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,85 @@
+import { CharacterConfig, ElementArchetype, RenderStyleConfig, ShotDefinition } from '../types/storyboard';
+import { SHOT_DEFINITIONS } from '../data/presets';
+
+export interface PromptOutputBundle {
+  fullChinesePrompt: string;
+  midjourneyPrompt: string;
+  fluxSdPrompt: string;
+  geminiImagenPrompt: string;
+  negativePrompt: string;
+  shotPrompts: { index: number; name: string; promptZh: string; promptEn: string }[];
+}
+
+export function buildCompletePromptBundle(
+  archetype: ElementArchetype,
+  character: CharacterConfig,
+  renderStyle: RenderStyleConfig,
+  customSpellName?: string,
+  customSummonEntity?: string
+): PromptOutputBundle {
+  const summonEntity = customSummonEntity || archetype.summonEntity;
+  const spellName = customSpellName || archetype.ultimateSpellName;
+  const charTag = character.referenceImageDescription 
+    ? `参考角色特征: 【${character.referenceImageDescription}】` 
+    : `角色外观: 【${character.gender}，${character.costume}，${character.hairStyle}，${character.accessories}，${character.expression}】`;
+
+  // 1. Full Chinese Prompt (Core Master Specification)
+  const fullChinesePrompt = `3×3网格分镜布局，全景图包含9个独立画面，每个画面均为16:9比例，${character.referenceImageBase64 ? '参【图1】角色特征' : charTag}，呈现角色施展【${spellName}】终极大招的专业影视制作级动作场面分镜表，视觉布局严谨规整。
+
+整体风格：中国风修仙主题，顶级影视CG动画风格，超写实3D渲染画质，黑色背景，高反差电影级光影。
+角色招式：修仙角色释放终极法术大招【${spellName}】，${archetype.element}属性法术，以【${summonEntity}】为大招核心，多元修仙术法融合爆发。
+画面核心要求：全程极度夸张大透视构图，超强空间纵深感与视觉张力，彻底规避平面化呈现；${archetype.particleEffects}，光影层次丰富立体，高光锐利通透、暗部深邃干净，兼顾法术爆发冲击力与微观细节质感，每帧达院线3D动画影视级渲染精度。
+
+9个独立分镜镜头动作编排（严格按动作逻辑排布）：
+1. 掐诀：${SHOT_DEFINITIONS[0].actionDescription}（${SHOT_DEFINITIONS[0].cameraShot}，${archetype.primaryColor}微光符文流转）
+2. 蓄力出招：${SHOT_DEFINITIONS[1].actionDescription}（${SHOT_DEFINITIONS[1].cameraShot}，能量倒灌，衣袍长发狂舞）
+3. 术法显现：${SHOT_DEFINITIONS[2].actionDescription}（${SHOT_DEFINITIONS[2].cameraShot}，${summonEntity}初露峥嵘）
+4. 术法凝聚：${SHOT_DEFINITIONS[3].actionDescription}（${SHOT_DEFINITIONS[3].cameraShot}，能量光轨极限向心压缩）
+5. 术法舒展：${SHOT_DEFINITIONS[4].actionDescription}（${SHOT_DEFINITIONS[4].cameraShot}，${summonEntity}腾空舒展，盘旋纵深）
+6. 大招爆发：${SHOT_DEFINITIONS[5].actionDescription}（${SHOT_DEFINITIONS[5].cameraShot}，双掌轰出，核爆级冲击波撕裂虚空）
+7. 出招冲击：${SHOT_DEFINITIONS[6].actionDescription}（${SHOT_DEFINITIONS[6].cameraShot}，光柱极速贯穿，空间碎裂流光拉丝）
+8. 大招特写：${SHOT_DEFINITIONS[7].actionDescription}（${SHOT_DEFINITIONS[7].cameraShot}，核心法相霸气极近特写，纤毫毕现）
+9. 攻击威能：${SHOT_DEFINITIONS[8].actionDescription}（${SHOT_DEFINITIONS[8].cameraShot}，浩瀚通天光柱荡平寰宇，漫天光尘如雨）`;
+
+  // 2. Midjourney V6 Format
+  const midjourneyPrompt = `3x3 grid storyboard layout, contact sheet of 9 distinct sequential cinematic shots, each frame 16:9 ratio, Chinese xianxia dark fantasy 3D animation style, ultimate spell cast action sequence of ${character.gender} ${character.costume} ${character.hairStyle}, casting supreme magic '${spellName}', core entity: ${archetype.magicDescriptionEn}, pure black background, hyper-dramatic wide perspective depth, volumetric glowing particles, sharp crystal highlights, Octane Render 8k cinema quality, dynamic action sequence panels: 1. hand mudra close-up 2. chi accumulation upward tilt 3. spirit entity emergence 4. extreme energy vortex compression 5. massive entity unfurling 6. explosive palm blast shockwave 7. supersonic tracking piercing beam 8. ferocious macro portrait close-up 9. apocalyptic cataclysmic light pillar --ar 16:9 --style raw --v 6.1 --q 2 --s 250`;
+
+  // 3. Flux / SDXL Format
+  const fluxSdPrompt = `masterpiece, best quality, cinematic 3x3 storyboard grid layout, contact sheet showing 9 separate chronological action sequence panels in 16:9 aspect ratio. Subject: Chinese fantasy immortal cultivator unleashing ultimate spell '${spellName}'. Visual elements: ${archetype.magicDescriptionEn}, pure black void backdrop, extreme dynamic depth perspective, glowing volumetric particles, crystal clear refractive magic aura, Unreal Engine 5 Lumen cinematics, ray tracing, sharp rim lighting, ultra-detailed textures, sequential action from mudra hand seals to cataclysmic blast.`;
+
+  // 4. Gemini / Imagen Prompt
+  const geminiImagenPrompt = `A professional cinematic 3x3 grid storyboard contact sheet containing 9 distinct consecutive 16:9 action panels on a pure dark background. The sequence showcases a Chinese xianxia cultivator casting an ultimate celestial spell featuring ${archetype.summonEntity}.
+Style: Premium 3D CG blockbuster donghua animation, extreme depth of field, hyper-perspective composition, crystalline sharp specular highlights, rich volumetric lighting.
+Panels sequence:
+Panel 1: Close-up of delicate hands weaving mystical mudra hand seal with glowing elemental runes.
+Panel 2: Dramatic low-angle shot of cultivator charging immense chi power, clothes and hair whipping in vortex.
+Panel 3: Medium shot showing ethereal translucent ${archetype.summonEntity} manifesting from spatial tear.
+Panel 4: Dynamic wide-angle showing immense glowing energy vortex condensing into a solid radiant form.
+Panel 5: Panoramic majestic shot of the giant entity fully uncoiling and ascending into the void.
+Panel 6: Explosive fisheye burst as cultivator pushes palms forward, triggering concentric sonic boom shockwaves.
+Panel 7: Over-the-shoulder tracking shot of the entity rocketing forward as a devastating light beam.
+Panel 8: Micro macro portrait close-up of the entity maw and fierce eyes with intricate luminous scales.
+Panel 9: Apocalyptic wide long shot of a titanic sky-piercing light pillar with floating golden stardust.`;
+
+  // 5. Negative Prompt
+  const negativePrompt = `blurry, low quality, flat 2D anime, amateur drawing, ugly hands, distorted fingers, cropped frames, messy borders, uneven grid, watermark, text, signature, low resolution, noisy, bad anatomy, deformed face, cartoon sketch, oversaturated muddy colors, bright white background, washed out lighting`;
+
+  // 6. Shot Prompts breakdown
+  const shotPrompts = SHOT_DEFINITIONS.map((def) => {
+    return {
+      index: def.index,
+      name: def.stepName,
+      promptZh: `【第${def.index}镜·${def.stepName}】(${def.cameraShot}) ${character.gender}施展${spellName}。${def.actionDescription} ${archetype.particleEffects}。纯黑背景，顶级影视3D渲染画质。`,
+      promptEn: `Shot ${def.index} [${def.englishStep}]: (${def.cameraShot}) Chinese cultivator casting ${spellName}. ${def.actionDescription} Featuring ${archetype.magicDescriptionEn}. Pure black background, 8k cinematic Octane render.`,
+    };
+  });
+
+  return {
+    fullChinesePrompt,
+    midjourneyPrompt,
+    fluxSdPrompt,
+    geminiImagenPrompt,
+    negativePrompt,
+    shotPrompts,
+  };
+}
