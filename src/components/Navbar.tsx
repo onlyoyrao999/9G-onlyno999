@@ -26,6 +26,8 @@ interface NavbarProps {
   onGenerateGrid: () => void;
   isGenerating: boolean;
   onResetToDefault: () => void;
+  activeViewMode?: 'prompt' | 'grid';
+  onViewModeChange?: (mode: 'prompt' | 'grid') => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
@@ -39,6 +41,8 @@ export const Navbar: React.FC<NavbarProps> = ({
   onGenerateGrid,
   isGenerating,
   onResetToDefault,
+  activeViewMode = 'prompt',
+  onViewModeChange,
 }) => {
   return (
     <header className="sticky top-0 z-40 w-full border-b border-white/10 bg-[#07090e]/90 backdrop-blur-md">

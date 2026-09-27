@@ -1,4 +1,11 @@
 export type ElementArchetypeId = 
+  | 'sanfen-guiyuan'
+  | 'mohe-wuliang'
+  | 'xianglong-zhang'
+  | 'paiyun-zhang'
+  | 'fengshen-tui'
+  | 'wanjian-guizong'
+  | 'rulai-shenzhang'
   | 'green-dragon'
   | 'purple-flame'
   | 'golden-sword'
@@ -42,27 +49,30 @@ export interface ElementArchetype {
   magicDescriptionEn: string;
   defaultPromptSnippet: string;
   bgAtmosphere: string;
+  eraBadge?: string; // '2008 港片巅峰' | '经典修仙' | '魔道绝学'
 }
 
 export interface CharacterConfig {
   name: string;
-  gender: '男修仙者' | '女修仙者' | '青年剑尊' | '白发仙君' | '魔道天骄' | '神秘道袍宗师';
-  costume: string; // 汉服长袍, 墨黑战甲, 飘逸白玉道袍, 锦绣云纹劲装
-  hairStyle: string; // 束发玉冠, 银白长发随气浪狂舞, 黑色高马尾
-  accessories: string; // 悬浮护身法宝, 腰佩古玉, 剑穗飘摇
-  expression: string; // 冷峻沉稳, 杀伐凌厉, 仙风道骨, 极度专注
+  gender: '男修仙者' | '女修仙者' | '青年剑尊' | '白发仙君' | '魔道天骄' | '神秘道袍宗师' | '港影武宗大侠';
+  costume: string; // 汉服长袍, 墨黑战甲, 飘逸白玉道袍, 锦绣云纹劲装, 经典港片红巾黑披风
+  hairStyle: string; // 束发玉冠, 银白长发随气浪狂舞, 黑色高马尾, 港风披肩狂发
+  accessories: string; // 悬浮护身法宝, 腰佩古玉, 剑穗飘摇, 浑天仪祭坛法阵
+  expression: string; // 冷峻沉稳, 杀伐凌厉, 仙风道骨, 极度专注, 霸气侧漏
   referenceImageBase64?: string;
   referenceImageDescription?: string;
 }
 
 export interface RenderStyleConfig {
-  stylePreset: '3d-cg-cinematic' | 'unreal-engine-5' | 'donghua-masterpiece' | 'dark-fantasy-realism';
+  stylePreset: 'hk-classic-wuxia-vfx' | '3d-cg-cinematic' | 'unreal-engine-5' | 'donghua-masterpiece' | 'dark-fantasy-realism';
   lightingQuality: 'cinematic-volumetric' | 'dramatic-rim-light' | 'celestial-god-rays' | 'high-contrast-chiaroscuro';
   aspectRatio: '16:9' | '1:1' | '4:3' | '9:16';
   resolutionLevel: '8k-octane' | 'ue5-lumen' | 'imax-cinema';
   enableParticleAura: boolean;
   enableDynamicMotionBlur: boolean;
   enableBlackVoidBackground: boolean;
+  is08HKCinematicMode?: boolean; // 2008年港片电影胶片与动作风格开关
+  hkColorGrading?: '08-teal-emerald-dark' | '08-amber-gold-fiery' | '08-storm-cyan-blue' | '08-ink-shadow-spectral';
 }
 
 export interface StoryboardProject {

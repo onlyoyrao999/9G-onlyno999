@@ -1,152 +1,125 @@
-# 9G-onlyno999 · 九宫格修仙大招分镜工坊 (Xianxia 9-Grid Storyboard Studio)
+# 9G-onlyno999: 3×3 九宫格影视级修仙/港影大招分镜工坊
+> **(Xianxia & 2008 HK Martial Arts Cinema 9-Grid Storyboard Studio)**
 
-[![Project Name](https://img.shields.io/badge/Project-9G--onlyno999-10b981?style=for-the-badge&logo=github)](https://github.com/onlyoyrao999/D-Z-P-Z-W)
-[![Skill Version](https://img.shields.io/badge/Skill-D--Z--P--Z--W%20Ultimate%20Arcana-8b5cf6?style=for-the-badge)](https://github.com/onlyoyrao999/D-Z-P-Z-W)
-[![Framework](https://img.shields.io/badge/Framework-React%2019%20%7C%20Vite%208%20%7C%20TailwindCSS-38bdf8?style=for-the-badge)](https://react.dev/)
-[![AI Engine](https://img.shields.io/badge/AI%20Engine-Gemini%202.5%20%7C%20Imagen%203-f59e0b?style=for-the-badge)](https://ai.google.dev/)
-
-> **9G-onlyno999** 是专为国风仙侠漫剧、3D玄幻动画短剧及视频博主打造的 **3×3 九宫格法术大招动作分镜生成工作台**。
-> 深度整合来自 [GitHub onlyoyrao999/D-Z-P-Z-W](https://github.com/onlyoyrao999/D-Z-P-Z-W) 的动作心法与终极奥义，将复杂的终极法术拆解为 **9 个符合专业影视摄影机调度的连贯镜头**，彻底解决 AI 视频生成中角色跳脱、动作断层与画风混乱的痛点！
+[![Version](https://img.shields.io/badge/version-1.3.0-emerald.svg)](./package.json)
+[![Skill Document](https://img.shields.io/badge/Skill-SKILL.md-blue.svg)](./SKILL.md)
+[![D-Z-P-Z-W Arcana](https://img.shields.io/badge/GitHub-D--Z--P--Z--W-orange.svg)](https://github.com/onlyoyrao999/D-Z-P-Z-W)
+[![License](https://img.shields.io/badge/license-Apache--2.0-black.svg)](./LICENSE)
 
 ---
 
-## 📖 核心心法与三大原则 (Core Philosophy)
+## 📌 项目概述 (Overview)
 
-```mermaid
-graph LR
-    A[01 掐诀 · 起手] --> B[02 蓄力 · 引气]
-    B --> C[03 显形 · 破界]
-    C --> D[04 聚能 · 压缩]
-    D --> E[05 舒展 · 冲霄]
-    E --> F[06 爆发 · 怒放]
-    F --> G[07 冲击 · 贯穿]
-    G --> H[08 特写 · 神威]
-    H --> I[09 威能 · 寰宇]
+`9G-onlyno999` 是一款专为**仙法打斗漫剧、短剧、修仙动画与 2008 经典港产玄幻/动作大片**打造的专业 3×3 九宫格分镜生成与动作拆解系统。
+
+本系统深度研习了以 2008 年代为代表的经典香港玄幻动作大片（如《风云》《蜀山传》《龙虎门》《功夫》）的色彩搭配、运镜语法、真气法术特效与武指动作逻辑，将一个完整的大招释放过程拆解为符合院线工业标准的 **9 大连贯分镜镜头**，并支持多流派法术一键替换、角色人设特征图锁定、九宫格高精度自动切片、动漫画板循环播放与多平台提示词（Midjourney / Flux / Imagen / Gemini）一键导出。
+
+---
+
+## ⚡ 核心交互准则 (Core Operating Principle)
+
+> **🎯 准则声明**：
+> **当用户需要画九宫格时，系统才执行 3×3 矩阵图像绘制与分镜切片；未指定画图需求时，默认按结构化分镜提示词工程（Prompt Compilation）格式精准输出。**
+
+1. **按提示词输出模式 (默认)**：
+   * 优先输出 9 大连贯分镜逐镜调度指令与中英文母版提示词。
+   * 支持一键复制 Midjourney v6.1、Flux / SDXL、Gemini / Imagen 与负向提示词。
+   * 极速响应，便于作为提示词工程中心与视频 AI 首尾帧参数基准。
+2. **九宫格绘图与分镜渲染模式 (按需触发)**：
+   * 仅在用户明确需要或点击【🎨 立即绘制九宫格】时执行绘图。
+   * 调用 Imagen 3 仙法大模型绘制完整 3×3 全景母图，自动裁切为 9 张独立 16:9 影视切片。
+   * 激活 9 帧连贯动态漫剧播放器与 ZIP 一键打包导出。
+
+---
+
+## 🎬 2008 年港片动作与法术奥义美学标准 (2008 HK Cinema Action & Spell Paradigm)
+
+本系统核心汲取了 **2008 年香港巅峰动作玄幻电影** 的视听语言体系：
+
+### 1. 色彩搭配与胶片调色 (Color Grading)
+* **高反差青冷暗调 (Teal & Emerald Dark)**：以深邃纯黑（Pure Inky Black Void）或阴云为背景，前景法术呈现晶莹透亮的翡翠绿、青幽灵光，高光锐利如刀锋、暗部深邃干净微透墨绿。
+* **琥珀金煞与朱红对冲 (Amber Gold & Crimson)**：降龙纯阳金煞与血气推掌印形成极致冷暖明暗对比。
+* **苍蓝冰煞与风云气象 (Storm Cyan)**：高速快门残影与苍蓝水雾。
+* **35mm 胶片质感**：细腻胶片微颗粒（Film Stock Grain）、变形宽银幕光斑（Anamorphic Flare）与暗角（Vignette）。
+
+### 2. 招式动作与武指设计 (Action Choreography)
+* **实打实硬桥硬马与真气外放融合**：下盘马步沉身、丹田引气、双手极速翻飞结印。
+* **高速快门残影 (Staccato Shutter Action Trails)**：推掌出拳伴随千重重叠掌印残影与真气流光。
+* **空气音爆环 (Concentric Sonic Boom Discs)**：大招轰出瞬间空气被压缩炸裂出白色圆环气爆。
+* **念力飞石与地表崩碎**：强大的真气压迫感引动四周碎石反重力浮空吸附旋转。
+
+---
+
+## 📐 3×3 九宫格 9 大标准分镜镜头编排 (9-Frame Action Choreography)
+
+| 序号 | 动作阶段 | 镜头景别与拍摄角度 | 焦距 | 动作与特效解析 |
+| :---: | :---: | :---: | :---: | :--- |
+| **01** | **起手·掐诀** | 35mm 特写/微距 (Close-Up) | 35mm | 双手十指翻飞结玄奥古法印诀，指尖流淌璀璨符文微光与重叠残影 |
+| **02** | **蓄力·引气** | 24mm 低角度仰拍大透视 (Low Angle) | 24mm | 沉身蓄力引动天地灵气，衣袍长发狂舞，地表碎石念力悬浮 |
+| **03** | **显形·虚影** | 28mm 中景透视 (Medium Dynamic) | 28mm | 身后虚空撕裂，半透明灵体神兽/气劲真身破界初显 |
+| **04** | **聚能·压缩** | 18mm 广角向心透视 (Wide Compression) | 18mm | 能量光轨如千军万马向掌心/法相核心极速向心压缩，电弧激荡 |
+| **05** | **舒展·冲霄** | 14mm 超广角全景 (Ultra-Wide Epic) | 14mm | 神兽巨躯彻底舒展腾空盘旋，遮天蔽日，天地空间纵深拉满 |
+| **06** | **爆发·怒放** | 16mm 鱼眼大张力冲击 (Fisheye Action) | 16mm | 双掌悍然轰出，多层音爆气爆环炸裂，狂暴能量喷薄怒放 |
+| **07** | **冲击·贯穿** | 50mm 过肩侧后极速追焦 (OTS Tracking) | 50mm | 大招化为破虚光柱极速贯穿战场，留下笔直空间裂痕与流光拉丝 |
+| **08** | **特写·神威** | 85mm 黄金微距特写 (Macro Portrait) | 85mm | 核心法相/龙首怒目与霸气眼神极近特写，鳞爪微观分毫毕现 |
+| **09** | **威能·荡涤** | 12mm 远景全景大毁灭 (Apocalyptic Vista) | 12mm | 大招命中引发通天彻地光柱，环形涟漪荡平苍穹，漫天光尘如雨 |
+
+---
+
+## ⚡ 终极奥义库 (Ultimate Arcana Repetoire)
+
+涵盖 **D-Z-P-Z-W 终极奥义** 与 08 经典港片/修仙神功：
+
+* 🔮 **三分归元气 · 雄霸天下 (08港片巅峰极意)**：翡翠神球、青白电弧、万石浮空
+* 🌀 **风云绝响 · 摩诃无量 (08港影终极绝学)**：冰火双螺旋龙卷、风云合璧撕裂虚空
+* 🐲 **降龙廿八掌 · 亢龙有悔 (08港武金青双龙)**：硬派马步推掌、纯金苍龙破体
+* 🗡️ **万剑归宗 · 青蓝剑煞 (徐克蜀山式剑仙)**：亿万青蓝灵芒飞剑天河倒灌
+* ✋ **如来神掌 · 万佛朝宗 (08港片天穹金掌)**：九天云海洞穿、金色巨掌轰天裂地
+* 🐉 **九天苍龙 · 万界破虚 (D-Z-P-Z-W 核心)**：半透明碧绿灵体青龙、动态消散翡翠灵光
+* 👿 **幽冥紫极 · 九幽焚天 (D-Z-P-Z-W 魔尊)**：紫晶魔火冷焰、空间坍塌湮灭
+* ⚡ **太初天劫 · 紫霄神雷 (D-Z-P-Z-W 雷劫)**：高频爆闪赤色雷蛇与等离子能量环
+* 🪷 **业火红莲 · 净世 (太上真火)**：九瓣琉璃金焰红莲、神圣梵文流光
+* ☯️ **乾坤八卦 · 阴阳 (混元天师)**：立体混元太极双鱼图与天干地支卦爻
+
+---
+
+## 🛠️ 技术架构与功能模块 (Architecture & Features)
+
+```
+/
+├── SKILL.md                          # 核心技能标准规范与分镜公式文档
+├── README.md                         # 项目全景技术与使用手册（持续自动更新）
+├── server.ts                         # Express 全栈后端 (AI 图生文/文生图/GitHub 技能加载)
+├── src/
+│   ├── components/
+│   │   ├── Navbar.tsx                # 顶部导航、按提示词/九宫格模式指示器、快速生成与导出
+│   │   ├── GridVisualizer.tsx        # 3×3 工作台、提示词逐镜输出卡片、九宫格矩阵与切片检视
+│   │   ├── PromptConfigPanel.tsx     # 功法流派、08港片调色、人设细节、多格式提示词生成
+│   │   ├── GitHubSkillLoaderModal.tsx# GitHub (D-Z-P-Z-W) 远程技能与 Markdown 动态解析器
+│   │   ├── SkillKnowledgeModal.tsx   # 分镜动作心法、运镜理论与 SKILL.md 文档检视器
+│   │   ├── CinematicPlayerModal.tsx  # 9帧连贯动态漫剧播放器 (带震屏与动作节拍控制)
+│   │   └── ReferenceImageUploader.tsx# 角色人设参考图上传与多模态特征识别
+│   ├── data/
+│   │   └── presets.ts                # 9大镜头定义、08港影奥义库、调色预设
+│   ├── utils/
+│   │   ├── promptEngine.ts           # 多平台提示词编译生成引擎 (MJ/Flux/Imagen/Gemini)
+│   │   └── slicer.ts                 # Canvas 3×3 九宫格精确图像切片与 ZIP 打包工具
+│   └── types/
+│       └── storyboard.ts             # TypeScript 类型定义
 ```
 
-### 1. 🛡️ 画风锁死 (Style Locking)
-- **核心关键词**：`中国风修仙主题，顶级影视CG动画风格，超写实3D渲染画质，黑色背景，高反差电影级光影`
-- **设计目的**：锁定纯黑虚空背景与强体积边缘光（Volumetric Rim Light），强制 AI 锁定角色轮廓与法术粒子折射，彻底规避画风混杂。
-
-### 2. 🔥 特效核心 (Particle & Entity Core)
-- **视觉主体**：以半透明灵体神兽/法相（如中国青龙能量形态）为大招核心。
-- **粒子要求**：粒子细腻绵密，自带动态消散、流光流转、翡翠灵光与能量氤氲效果，高光锐利通透、暗部深邃干净，兼顾爆发冲击力与微观鳞片/符文质感。
-
-### 3. 🎬 镜头逻辑 (9-Step Chronological Progression)
-- 9张图严格按“**起手 ➜ 蓄力 ➜ 显形 ➜ 聚能 ➜ 舒展 ➜ 爆发 ➜ 冲击 ➜ 特写 ➜ 收尾**”排布，全景切片后导入可灵/Runway/即梦生成视频，动作天然连贯绝不跳脱！
-
 ---
 
-## ⚡ 3×3 九宫格动作拍摄调度表
+## 🚀 快速开始 (Quick Start)
 
-| 序号 | 分镜阶段 | 镜头焦距与景别 | 拍摄角度与透视 | 动作导演指令 (Director Script) | 视觉特效与光影重点 |
-| :---: | :--- | :--- | :--- | :--- | :--- |
-| **01** | **掐诀** (Mudra) | 35mm 特写/微距 | 45度侧视半特写 | 双手指法翻飞，结出玄奥古法印诀 | 指尖符文流光微绽，微观灵气粒子升腾 |
-| **02** | **蓄力出招** (Charge) | 24mm 仰拍大透视 | 极低角度大仰角 | 身形微沉引气，衣袍长发狂舞 | 周天灵气漏斗倒灌，脚下阵图旋转 |
-| **03** | **术法显现** (Manifest) | 28mm 中景纵深 | 斜侧45度大空间 | 剑指点出，身后虚空撕裂 | 半透明灵体神兽虚影破界初露峥嵘 |
-| **04** | **术法凝聚** (Condense) | 18mm 广角大张力 | 正面大广角向心 | 双臂合抱，漫天能量极限压缩 | 能量光轨向心凝实，空间剧烈扭曲 |
-| **05** | **术法舒展** (Unfurl) | 14mm 超广角全景 | 大旋转俯仰镜头 | 巨型法相咆哮腾空，盘旋环绕 | 绵延千丈横贯画面，龙须符文锁链飞舞 |
-| **06** | **大招爆发** (Release) | 16mm 鱼眼广角 | 近身极度夸张透视 | 倾尽修为双掌悍然轰出 | 核爆级能量冲击波，多重气爆环炸裂 |
-| **07** | **出招冲击** (Impact) | 50mm 追焦跟随 | 过肩侧后方高速跟随 | 法相化作破虚光柱极速贯穿 | 超音速流光尾迹与空间碎裂拉丝 |
-| **08** | **大招特写** (Close-Up) | 85mm 肖像微距 | 微距低角度仰视 | 核心龙首怒目圆睁，口含龙珠 | 晶莹翡翠鳞片纤毫毕现，三点布光 |
-| **09** | **攻击威能** (Apocalypse) | 12mm 远景全景 | 极远高空俯瞰全景 | 命中天地引发通天光柱与毁灭涟漪 | 环形能量波荡平万里，漫天光尘如雨 |
-
----
-
-## 🌟 核心功能矩阵 (Feature Matrix)
-
-- 🐉 **九大功法流派一键替换**：
-  - **碧霄青龙**（木/风/灵 · 九天苍龙）
-  - **万剑归宗**（金/剑意 · 庚金破虚）
-  - **幽冥紫焰**（魔/幽火 · 九幽魔尊）
-  - **冰凤凌霄**（冰/水 · 万古玄冰）
-  - **赤霄神雷**（雷/劫 · 九天雷帝）
-  - **业火红莲**（火/佛道 · 纯阳真火）
-  - **幽冥黑龙**（暗/煞 · 深渊黑曜）
-  - **乾坤八卦**（阴阳/混元 · 两仪化生）
-  - **虚空破灭**（空间/星辰 · 维度撕裂）
-
-- 🌐 **D-Z-P-Z-W 终极奥义 GitHub 在线载入器**：
-  - 一键拉取并解析 [GitHub D-Z-P-Z-W](https://github.com/onlyoyrao999/D-Z-P-Z-W) 终极奥义动作库。
-  - 支持自定义输入功法口诀或 Skill Markdown，AI 自动重构为九宫格分镜。
-
-- 🎭 **【图1】角色外观锁定器 (Reference Locking)**：
-  - 上传角色参考图，Gemini 视觉大模型智能提取服饰、发冠、玉佩、法宝与气质特征，锁定 9 镜人物高度一致。
-
-- 🎞️ **动态漫剧播放器 (Cinematic Animatic Player)**：
-  - 1~9 动作帧循环播放、多档调速（0.5s ~ 2.0s）、影视级震屏特效、动态音效合成（掐诀清鸣/蓄力轰鸣/核爆音效）。
-
-- 📦 **智能切片与一键打包 (Export Suite)**：
-  - Canvas 智能无损切片为 9 张独立的 16:9 高清大图，并一键生成带说明文档的 ZIP 压缩包。
-
-- 📝 **多平台 Prompt 母版生成器**：
-  - 实时输出 **中文原版母版**、**Midjourney v6.1 (`--ar 16:9 --style raw`)**、**Flux / SDXL**、**Gemini / Imagen 3** 及**负向提示词**。
-
----
-
-## 🛠️ 技术栈架构 (Tech Stack)
-
-| 层次 | 技术选型 | 说明 |
-| :--- | :--- | :--- |
-| **前端核心** | React 19 + TypeScript + Vite 8 | 次世代现代化 SPA 架构 |
-| **样式与视觉** | Tailwind CSS v4 + Motion | 电影级黑金暗黑修仙 UI |
-| **AI 视觉与大模型** | `@google/genai` (Gemini 2.5 Flash / Imagen 3) | 角色图分析、奥义解构与九宫格图像生成 |
-| **切片与导出** | HTML5 Canvas + JSZip | 3×3 矩阵切割与多文件 ZIP 导出 |
-| **特效组件** | Canvas Confetti + Web Audio API | 粒子礼花与动作合成音效 |
-| **全栈服务** | Express + TSX Proxy Server | API 安全代理与静态资源托管 |
-
----
-
-## 🚀 快速启动 (Quick Start)
-
-### 1. 克隆与安装依赖
+### 本地运行与开发
 ```bash
+# 1. 安装依赖
 npm install
-```
 
-### 2. 配置环境变量
-复制 `.env.example` 为 `.env` 并填入 Gemini API Key：
-```env
-GEMINI_API_KEY="YOUR_GEMINI_API_KEY"
-PORT=3000
-```
-
-### 3. 本地开发
-```bash
+# 2. 启动全栈开发环境
 npm run dev
-```
-访问开发服务器：`http://localhost:3000`
 
-### 4. 生产构建与启动
-```bash
+# 3. 生产环境打包
 npm run build
-npm run start
 ```
-
----
-
-## 🎬 漫剧视频生成工作流 (AI Video Pipeline)
-
-```text
-[ 9G-onlyno999 工坊 ]
-         │
-         ▼
-[ 导出 9 张 16:9 动作切片图 (ZIP) ]
-         │
-         ▼
-[ 导入 可灵 AI (Kling) / Runway Gen-3 / 即梦 (Jimeng) / Sora ]
-         │
-         ├─ 首尾帧模式：第1镜 ➔ 第2镜（起手 ➔ 蓄力）
-         ├─ 图生视频模式：第5镜 ➔ 第6镜（舒展 ➔ 爆发）
-         └─ 尾帧收尾模式：第7镜 ➔ 第9镜（冲击 ➔ 威能）
-         │
-         ▼
-[ 丝滑连贯的影视级修仙打斗大招视频诞生！]
-```
-
----
-
-## 📄 开源协议与鸣谢 (License & Credits)
-
-- 本项目动作心法灵感源自：[onlyoyrao999/D-Z-P-Z-W](https://github.com/onlyoyrao999/D-Z-P-Z-W)
-- 遵循 Apache-2.0 开源协议。

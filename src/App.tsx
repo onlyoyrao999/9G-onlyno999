@@ -50,6 +50,7 @@ export default function App() {
   const [isGitHubModalOpen, setIsGitHubModalOpen] = useState<boolean>(false);
   const [isPlayerOpen, setIsPlayerOpen] = useState<boolean>(false);
   const [isCopiedGlobal, setIsCopiedGlobal] = useState<boolean>(false);
+  const [activeViewMode, setActiveViewMode] = useState<'prompt' | 'grid'>('prompt');
 
   // 2. Compute dynamic prompt bundle
   const promptBundle = useMemo(() => {
@@ -80,8 +81,9 @@ export default function App() {
     });
   }, [currentArchetype, customSpellName]);
 
-  // 4. AI Generation Handler
+  // 4. AI Generation Handler (Triggered when user explicitly needs to draw 9-grid)
   const handleGenerateGrid = async () => {
+    setActiveViewMode('grid');
     setIsGenerating(true);
     try {
       const res = await fetch('/api/generate-storyboard-image', {
@@ -171,6 +173,8 @@ export default function App() {
           setCustomSpellName(ELEMENT_ARCHETYPES[0].ultimateSpellName);
           setCustomSummonEntity(ELEMENT_ARCHETYPES[0].summonEntity);
         }}
+        activeViewMode={activeViewMode}
+        onViewModeChange={setActiveViewMode}
       />
 
       {/* Main Workspace Layout */}
@@ -210,13 +214,15 @@ export default function App() {
             {/* Quick stats badges */}
             <div className="flex items-center gap-2 text-xs flex-shrink-0">
               <div className="px-3 py-1.5 rounded-xl bg-black/60 border border-white/10 text-slate-300 text-center">
-                <div className="text-[10px] text-slate-400">分镜规格</div>
-                <div className="font-mono font-bold text-white">3×3 矩阵 / 16:9</div>
+                <div className="text-[10px] text-slate-400">输出准则</div>
+                <div className="font-mono font-bold text-emerald-400">
+                  {activeViewMode === 'prompt' ? '按提示词输出 (默认)' : '九宫格绘图渲染'}
+                </div>
               </div>
 
               <div className="px-3 py-1.5 rounded-xl bg-black/60 border border-white/10 text-slate-300 text-center">
                 <div className="text-[10px] text-slate-400">动作阶段</div>
-                <div className="font-bold text-emerald-400">9 步连贯节奏</div>
+                <div className="font-bold text-white">9 步连贯节奏</div>
               </div>
             </div>
           </div>
@@ -238,6 +244,7 @@ export default function App() {
               slicedImages={slicedImages}
               archetype={currentArchetype}
               spellName={customSpellName}
+              promptBundle={promptBundle}
               onOpenPlayer={() => setIsPlayerOpen(true)}
               onDownloadZip={handleDownloadZip}
               onReSlice={() => {
@@ -249,7 +256,10 @@ export default function App() {
                   }).then(setSlicedImages);
                 }
               }}
+              onGenerateGrid={handleGenerateGrid}
               isGenerating={isGenerating}
+              activeViewMode={activeViewMode}
+              onViewModeChange={setActiveViewMode}
             />
           </div>
 
@@ -272,6 +282,8 @@ export default function App() {
               onSummonEntityChange={setCustomSummonEntity}
               promptBundle={promptBundle}
               onOpenGitHubModal={() => setIsGitHubModalOpen(true)}
+              onGenerateGrid={handleGenerateGrid}
+              isGenerating={isGenerating}
             />
           </div>
 

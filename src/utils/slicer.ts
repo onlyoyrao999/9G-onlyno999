@@ -187,7 +187,66 @@ export function generateProcedural3x3GridCanvas(
       const progress = (idx + 1) / 9; // 0.1 to 1.0
 
       // Dynamic cinematic illustration per shot
-      if (idx === 0) {
+      if (archetype.id === 'sanfen-guiyuan') {
+        // Sanfen Guiyuan special rendering
+        if (idx === 0) {
+          // Multi-palm mudra
+          for (let p = -3; p <= 3; p++) {
+            ctx.beginPath();
+            ctx.arc(x + cellW / 2 + p * 16, y + cellH / 2, 28, 0, Math.PI * 2);
+            ctx.stroke();
+          }
+        } else if (idx === 1 || idx === 2) {
+          // Boulders levitating + small green orb
+          ctx.fillStyle = '#64748b';
+          for (let b = 0; b < 6; b++) {
+            ctx.fillRect(x + cellW * 0.2 + b * 40, y + cellH * 0.3 + (b % 3) * 35, 14, 14);
+          }
+          ctx.beginPath();
+          ctx.arc(x + cellW / 2, y + cellH / 2, 35, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(16, 185, 129, 0.4)';
+          ctx.fill();
+          ctx.stroke();
+        } else if (idx === 3 || idx === 4) {
+          // Dense Sanfen orb with lightning
+          ctx.beginPath();
+          ctx.arc(x + cellW / 2, y + cellH / 2, 55, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(16, 185, 129, 0.6)';
+          ctx.fill();
+          ctx.stroke();
+          // Lightning arcs
+          ctx.strokeStyle = '#38bdf8';
+          ctx.lineWidth = 2;
+          ctx.beginPath();
+          ctx.moveTo(x + cellW * 0.3, y + cellH * 0.2);
+          ctx.lineTo(x + cellW * 0.45, y + cellH * 0.5);
+          ctx.lineTo(x + cellW * 0.7, y + cellH * 0.8);
+          ctx.stroke();
+        } else if (idx === 5 || idx === 6) {
+          // Huge energy blast beam
+          ctx.beginPath();
+          ctx.moveTo(x + cellW * 0.1, y + cellH * 0.5);
+          ctx.lineTo(x + cellW * 0.9, y + cellH * 0.5);
+          ctx.lineWidth = 14;
+          ctx.stroke();
+        } else if (idx === 7) {
+          // Macro Orb in hand
+          ctx.beginPath();
+          ctx.arc(x + cellW * 0.5, y + cellH * 0.5, 70, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(16, 185, 129, 0.8)';
+          ctx.fill();
+          ctx.stroke();
+        } else {
+          // Pillar
+          ctx.beginPath();
+          ctx.moveTo(x + cellW * 0.4, y + cellH);
+          ctx.lineTo(x + cellW * 0.48, y);
+          ctx.lineTo(x + cellW * 0.52, y);
+          ctx.lineTo(x + cellW * 0.6, y + cellH);
+          ctx.closePath();
+          ctx.stroke();
+        }
+      } else if (idx === 0) {
         // 掐诀 Hand seal
         ctx.beginPath();
         ctx.arc(x + cellW / 2, y + cellH / 2, 45, 0, Math.PI * 2);
