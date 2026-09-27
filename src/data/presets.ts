@@ -582,6 +582,14 @@ export const ELEMENT_ARCHETYPES: ElementArchetype[] = [
 
 export const COLOR_GRADING_PRESETS_08_HK = [
   {
+    id: '08-hk-video-master',
+    name: '2008 港影原片级·翡翠玉魄与朱红对冲 (Jade Emerald & Vermilion Clash)',
+    description: '视频原片级提取色谱：深渊墨黑(#020617)与冷翠墨绿(#064e3b)打底，晶莹翡翠绿(#10b981)神光与高饱和朱红长幡(#dc2626)冷暖补色强对冲',
+    palette: ['#020617', '#064e3b', '#10b981', '#dc2626', '#ffffff'],
+    filmKeywordsZh: '2008年香港巅峰玄幻动作电影原片色彩基调，高反差青冷暗调与翡翠绿灵光，点缀高饱和朱红长幡形成冷暖强补色对冲，深邃黑位，锐利边缘光，35mm电影胶片质感',
+    filmKeywordsEn: '1998-2008 classic Hong Kong fantasy martial arts movie color grading, high-contrast dark teal and emerald green glow contrasting with vivid vermilion red banners, deep indigo shadow, glowing translucent jade energy sphere with cyan lightning arcs, volumetric god rays, 35mm film stock grain, sharp rim lighting',
+  },
+  {
     id: '08-teal-emerald-dark',
     name: '2008 港片青冷暗调 (Teal & Emerald Dark)',
     description: '浓烈高反差青冷暗调，纯黑背景搭配透亮翡翠绿/青幽流光，胶片暗角与锐利高光',

@@ -23,25 +23,32 @@ export const SkillKnowledgeModal: React.FC<SkillKnowledgeModalProps> = ({ isOpen
 
   const skillMdContent = `---
 name: 9G-onlyno999
-description: 仙法打斗漫剧 3×3 九宫格大招分镜生成与动作拆解技能库 (Xianxia 9-Grid Ultimate Spell Action Storyboard Skill)
-version: 1.0.0
+description: 仙法打斗漫剧 3×3 九宫格大招分镜生成与 2008 经典港片动作/色彩基调技能库 (Xianxia & 2008 HK Cinema 9-Grid Ultimate Action Storyboard Skill)
+version: 1.4.0
 author: onlyno999
 source: https://github.com/onlyoyrao999/D-Z-P-Z-W
 ---
 
-# 9G-onlyno999 · 仙法打斗漫剧 3×3 九宫格分镜 Skill 动作规范
+# 9G-onlyno999 · 仙法打斗漫剧 3×3 九宫格分镜 Skill 动作与色彩基调规范
 
-## 1. 技能概述 (Skill Overview)
-9G-onlyno999 是专为仙侠漫剧、3D国风动画、动作短剧打造的 3×3 九宫格动作分镜与提示词生成规范。
-它将一个完整的修仙法术终极大招，精准拆解为 9 个符合专业影视摄影机调度的连续动作镜头：
-掐诀 → 蓄力 → 术法显现 → 术法凝聚 → 术法舒展 → 大招爆发 → 出招冲击 → 大招特写 → 攻击威能。
+## 1. 核心触发与执行准则 (Core Operating Principle)
+- 默认【按提示词输出模式】：输出全局画风锁死、2008港片调色、角色特征绑定、9大分镜镜头序列与多平台提示词。
+- 按需【九宫格绘图与分镜切片模式】：仅在用户明确需要或点击【立即绘制九宫格】时，调用大模型生成 3×3 全景母图并执行 16:9 自动切片。
 
-## 2. 三大核心不可动摇原则 (Core Tenets)
-1. 画风锁死：中国风修仙主题，顶级影视CG动画风格，超写实3D渲染画质，黑色背景，高反差电影级光影。
-2. 特效核心：半透明灵体神兽/法相为主体，自带动态消散、流光流转、能量氤氲效果。
-3. 镜头逻辑：严格按“起手 → 蓄力 → 显形 → 聚能 → 舒展 → 爆发 → 冲击 → 特写 → 收尾”动作节奏排布。
+## 2. 视频深度提取：2008 港影色彩基调体系 (Color Palette & Aesthetics)
+1. 翡翠冷翠绿 / 幽冥碧玉 (#10b981, #064e3b, #6ee7b7): 半透明水晶水体流动质感、内发光灵气氤氲、青白电弧拉丝。
+2. 纯阳朱红与暗赤血气 (#dc2626, #991b1b, #f87171): 朱红长幡、撕臂血气排云、赤红发带，与翡翠青绿形成极高张力的冷暖补色对冲。
+3. 苍蓝深靛与风云水汽 (#0f172a, #1e3a8a, #38bdf8): 步惊云微卷蓝发、暗夜水波、青白风罡气流。
+4. 暗黑石窟与高反差虚空 (#020617, #18181b, #27272a): 35mm 胶片黑位无噪点纯净底色，强化刀锋般锐利的边缘轮廓光。
+5. 纯阳破晓金与通天白光 (#f59e0b, #ffffff): 空气音爆压缩环瞬爆高光、核爆级通天光柱、变形宽银幕眩光。
 
-## 3. 九大分镜动作与拍摄调度表 (3×3 Grid Matrix)
+## 3. 2008 港片经典招式与动作设计
+- 实打实硬桥硬马与真气外放融合
+- 高速快门动作残影 (Staccato Shutter Action Trails)
+- 空气音爆环 (Concentric Sonic Boom Discs)
+- 念力飞石与地表崩碎 (Telekinetic Debris Floating)
+
+## 4. 九大分镜动作与拍摄调度表 (3×3 Grid Matrix)
 - 01 掐诀 (Mudra): 35mm 特写微距，双手结印，指尖符文流光微绽。
 - 02 蓄力出招 (Charge): 24mm 仰拍大透视，身形微沉引气，衣袍长发狂舞，灵能倒灌。
 - 03 术法显现 (Manifest): 28mm 中景纵深，剑指点出，撕裂虚空，灵体破界初现。
