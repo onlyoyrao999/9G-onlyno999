@@ -411,6 +411,49 @@ export const PromptConfigPanel: React.FC<PromptConfigPanelProps> = ({
               </div>
             </div>
 
+            {/* 4 Core Seamless Cinematography Principles Display */}
+            <div className="p-4 rounded-xl bg-gradient-to-r from-sky-950/40 via-slate-900 to-emerald-950/40 border border-sky-500/20 space-y-2.5">
+              <div className="flex items-center justify-between">
+                <h4 className="text-xs font-bold text-sky-300 flex items-center gap-1.5">
+                  <Film className="w-3.5 h-3.5 text-sky-400" />
+                  <span>打斗丝滑运镜心法体系 (Seamless Cinematography Rules)</span>
+                </h4>
+                <span className="text-[10px] text-sky-300 bg-sky-950/60 border border-sky-500/30 px-2 py-0.5 rounded font-mono">
+                  已全局写入提示词
+                </span>
+              </div>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                <div className="p-2 rounded-lg bg-black/40 border border-white/5 space-y-0.5">
+                  <div className="text-sky-300 font-bold text-[11px] flex items-center gap-1">
+                    <span>⚡ 一镜到底 (One-Take)</span>
+                  </div>
+                  <div className="text-[10px] text-slate-400">10秒+连贯长镜头，零剪辑点硬切，动作连贯丝滑</div>
+                </div>
+
+                <div className="p-2 rounded-lg bg-black/40 border border-white/5 space-y-0.5">
+                  <div className="text-emerald-300 font-bold text-[11px] flex items-center gap-1">
+                    <span>🔄 动感手持与甩镜 (Whip-Pan)</span>
+                  </div>
+                  <div className="text-[10px] text-slate-400">镜头不落定，招式转向微秒级甩镜，前推压迫不后退</div>
+                </div>
+
+                <div className="p-2 rounded-lg bg-black/40 border border-white/5 space-y-0.5">
+                  <div className="text-amber-300 font-bold text-[11px] flex items-center gap-1">
+                    <span>📐 中景贴身与低仰拍 (Low Angle)</span>
+                  </div>
+                  <div className="text-[10px] text-slate-400">贴身中景保留神情与全身动作，低角度仰拍拉满压迫感</div>
+                </div>
+
+                <div className="p-2 rounded-lg bg-black/40 border border-white/5 space-y-0.5">
+                  <div className="text-rose-300 font-bold text-[11px] flex items-center gap-1">
+                    <span>💥 环境挨打与物理重力 (Physics & Impact)</span>
+                  </div>
+                  <div className="text-[10px] text-slate-400">激扬沙土与逆光，地砖碎裂摊位撞翻，落地沉坠重力感</div>
+                </div>
+              </div>
+            </div>
+
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               
               <div className="p-4 rounded-xl bg-black/30 border border-white/10 space-y-3">

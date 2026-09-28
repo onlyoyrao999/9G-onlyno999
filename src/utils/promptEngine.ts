@@ -41,13 +41,16 @@ export function buildCompletePromptBundle(
     ? '2008 Tsui Hark Zu Mountain cinematic dark fantasy palette, inky blacks with spectral amethyst and cyan luminescent energy'
     : '2008 Hong Kong classic fantasy action cinema color grading, high-contrast dark teal and deep emerald shadows, pure void backdrop, luminous jade neon aura, 35mm film stock grain';
 
+  const cinematographyZh = '运镜与摄影心法：全程遵循【一镜到底零剪辑点长镜头（Continuous One-Take）、动感手持跟拍（Handheld Tracking）、出招即换向的高速甩镜（Action-Triggered Whip Pan）、贴身中景与低机位仰拍（Low-Angle Medium Shot）、镜头不停/环境挨打/重力落体物理实感（Environmental Destruction & Weighty Impact）】。';
+  const cinematographyEn = 'seamless continuous one-take long shot style, kinetic handheld tracking camera with action-triggered whip pan, forward push-in, low-angle dramatic medium framing, environmental dust kick-up and debris destruction with backlit god rays, authentic physical weight and shockwave recoil';
+
   const styleHeadingZh = isHkStyle
-    ? `整体风格：2008年香港巅峰玄幻动作电影风格（如《风云》《蜀山传》《龙虎门》黄金年代院线美学），${hkGradingTag}。实打实硬桥硬马武指动作与真气外放完美结合，高速快门动作残影（Staccato Action），空气撕裂音爆环，念力飞石悬浮，极度夸张大透视构图与35mm胶片暗角。`
-    : '整体风格：中国风修仙主题，顶级影视CG动画风格，超写实3D渲染画质，黑色背景，高反差电影级光影。';
+    ? `整体风格：2008年香港巅峰玄幻动作电影风格（如《风云》《蜀山传》《龙虎门》黄金年代院线美学），${hkGradingTag}。${cinematographyZh}实打实硬桥硬马武指动作与真气外放完美结合，高速快门动作残影（Staccato Action），空气撕裂音爆环，念力飞石悬浮，极度夸张大透视构图与35mm胶片暗角。`
+    : `整体风格：中国风修仙主题，顶级影视CG动画风格，超写实3D渲染画质，黑色背景，高反差电影级光影。${cinematographyZh}`;
 
   const styleHeadingEn = isHkStyle
-    ? `2008 classic Hong Kong martial arts fantasy cinema aesthetic, ${hkGradingEn}, authentic Hong Kong stunt action choreography, staccato shutter motion trails, concentric air-compression sonic boom rings, telekinetic floating debris, anamorphic lens flare, high-contrast dramatic chiaroscuro`
-    : 'Chinese xianxia dark fantasy 3D animation style, Octane Render 8k cinema quality, pure black background, hyper-dramatic wide perspective depth';
+    ? `2008 classic Hong Kong martial arts fantasy cinema aesthetic, ${hkGradingEn}, ${cinematographyEn}, authentic Hong Kong stunt action choreography, staccato shutter motion trails, concentric air-compression sonic boom rings, telekinetic floating debris, anamorphic lens flare, high-contrast dramatic chiaroscuro`
+    : `Chinese xianxia dark fantasy 3D animation style, ${cinematographyEn}, Octane Render 8k cinema quality, pure black background, hyper-dramatic wide perspective depth`;
 
   // 1. Full Chinese Prompt (Core Master Specification)
   const fullChinesePrompt = `3×3网格分镜布局，全景图包含9个独立画面，每个画面均为16:9比例，${character.referenceImageBase64 ? '参【图1】角色特征' : charTag}，呈现角色施展【${spellName}】终极大招的专业影视制作级动作场面分镜表，视觉布局严谨规整。

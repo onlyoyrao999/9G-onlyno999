@@ -1,4 +1,8 @@
 export type ElementArchetypeId = 
+  | 'qingjin-zuidao-sakura'
+  | 'factory-tactical-cqc'
+  | 'dark-ink-swordsman'
+  | 'indoor-cqc-deadly'
   | 'sanfen-guiyuan'
   | 'mohe-wuliang'
   | 'xianglong-zhang'
